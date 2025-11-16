@@ -1,0 +1,23 @@
+const {Sequelize,DataTypes} =require('sequelize');
+
+require('dotenv').config();
+const CONNECTION_STRING= process.env.CONNECTION_STRING;
+const sequelize = new Sequelize(CONNECTION_STRING);
+
+const blogs=require('./models/blog.Model');
+
+sequelize.authenticate()
+.then(()=>{
+    console.log("connection done");
+})
+.catch((err)=>{
+   console.log("error",err);
+})
+
+const db={
+    Sequelize:Sequelize,
+    sequelize:sequelize,
+    blogs:blogs(sequelize,DataTypes),
+}
+
+module.exports=db;
