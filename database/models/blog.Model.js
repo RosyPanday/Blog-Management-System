@@ -8,7 +8,7 @@ const blogModel =(sequelize,DataTypes)=>{
         blogAuthor:{
           type:DataTypes.STRING,
         },
-        blogcontent:{
+        blogContent:{
             type:DataTypes.STRING,
         },
         blogStatus:{

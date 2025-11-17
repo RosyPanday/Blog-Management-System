@@ -19,5 +19,9 @@ const db={
     sequelize:sequelize,
     blogs:blogs(sequelize,DataTypes),
 }
+ 
+sequelize.sync({force:false, alter:true}).then(()=>{
+    console.log("yessss sync");
+});
 
 module.exports=db;
