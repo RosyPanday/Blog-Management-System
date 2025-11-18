@@ -14,6 +14,7 @@ sequelize.authenticate()
    console.log("error",err);
 })
 
+//this db.blogs is used in controller to perform db operations
 const db={
     Sequelize:Sequelize,
     sequelize:sequelize,

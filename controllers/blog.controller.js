@@ -1,4 +1,4 @@
-const blogs=require("./database/connection");
+const blogs=require("../database/connection");
 
 const fetchBlogs=async(req,res)=>{
    try{
@@ -31,7 +31,7 @@ const singleFetchBlogs= async(req,res)=>{
    }
 };
 
-const postBlogs=async(req,res)=>{
+const addBlogs=async(req,res)=>{
     try{
       const {blogTitle,blogAuthor,blogContent,blogStatus,blogPublishDate}=req.body;
        
@@ -85,4 +85,4 @@ const deleteBlogs= async(req,res)=>{
     }
 }
 
-module.exports= {fetchBlogs,postBlogs,editBlogs,deleteBlogs,singleFetchBlogs};
+module.exports= {fetchBlogs,addBlogs,editBlogs,deleteBlogs,singleFetchBlogs};
