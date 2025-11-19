@@ -83,9 +83,9 @@ const loginUser =async(req,res)=>{
         }
         //but if user exists?
         //It returns a Promise that resolves to a boolean:
-     const isMatch = await bcrypt.compare(usersPassword, userExisitng.usersPassword);
+     const isMatch = await bcrypt.compare(usersPassword, userExisting.usersPassword);
 
-       if(!Match){
+       if(!isMatch){
         return res.status(400).json({
             message:"invalid password",
         })
